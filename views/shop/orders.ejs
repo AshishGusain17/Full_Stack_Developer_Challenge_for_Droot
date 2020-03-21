@@ -1,0 +1,26 @@
+<%- include('../include/head.ejs') %>
+</head>
+<%- include('../include/middle.ejs') %>
+<% if(orders.length >0 ) { %>
+    <h1>customer user name : <%=orders[0].user.name %></h1>
+    <% for(let pr of orders){ %>
+        <h2>order no.#  <%= pr._id%></h2>
+        
+        <div class='orders1'>
+            <% for(let item of pr.items){ %>
+            <div class ='orders'>
+                <p>Quantity:<%=item.qty%></p>
+                <p>Item:<%=item.productId.title%></p>
+                <p>Price:<%=item.productId.price%></p>
+                <img src='<%=item.productId.path%>' alt='noimageinorder'>
+                <a href='/invoice/<%= pr._id%>'>Invoice</a>
+            </div>
+        <% } %></div>
+
+    <% } %>
+
+<% }else{ %>
+    <h1> no order yet</h1>
+<% } %>
+</body>
+</html> 

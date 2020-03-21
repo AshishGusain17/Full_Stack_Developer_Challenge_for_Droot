@@ -1,0 +1,18 @@
+<%- include('../include/head.ejs') %>
+</head>
+<%- include('../include/middle.ejs') %>
+<h1><%=obj.title%></h1>
+
+<div class='comp'>
+    <img src='\<%= obj.path %>' alt='notfindimage' >
+</div>
+
+<h1><%=obj.price%></h1>
+<p><%=obj.description%></p>
+<form method='POST' action='/addtocart2'>
+    <button type='submit'>add to cart</button>
+    <input type='hidden' name='detailid' value='<%= obj._id%>'>
+</form>
+
+</body>
+</html> 

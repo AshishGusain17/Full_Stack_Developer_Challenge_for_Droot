@@ -1,0 +1,32 @@
+<%- include('../include/head.ejs') %>
+</head>
+<%- include('../include/middle.ejs') %>
+    <%if( prods.length > 0){%>
+        <h1> myproducts</h1>
+        <% for(let pr of prods){%>
+            <div class='comp'>
+                <h1><%=pr.title%></h1>
+                <div>
+                    <img src='<%=pr.path %>'  alt='no-image' >
+                </div>
+                <div>
+                    <h2><%=pr.price%></h2>
+                </div>
+                <div>
+                    <h2><%=pr.description%></h2>
+                </div>
+                <div>
+                    
+                    <form method='POST' action='/addtocart'>
+                        <button type='submit'>add to cart</button> 
+                        <input type='hidden' name='detailid' value='<%= pr._id%>'>
+                    </form>
+                </div>
+            </div>
+        <%}%>
+                   
+    <%}else{%>
+        <h1> NO products</h1>
+    <%}%>
+</body>
+</html>

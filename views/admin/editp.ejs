@@ -1,0 +1,68 @@
+<%- include('../include/head.ejs') %>
+<link rel="stylesheet" href='/css/main.css'>
+</head>
+<%- include('../include/middle.ejs') %>
+<% if(message){ %>
+    <%= message %>
+<% } %>
+    <main>
+        <form action="  <%  if(editing){  %>/editpage
+                         <%  }else{        %>/addp
+                         <%  }             %>" method="POST" enctype="multipart/form-data">
+
+            <div  class='form'>
+                <h3>Title</h3>
+                <input type="text"
+                       name="title"
+                       value=' <%  if(editing){  %><%=product.title%>
+                               <%  }             %>'>
+            </div>
+ 
+
+        
+
+            <div  class='form'>
+                <h3>Image</h3>
+                <input type="file" 
+                        name="image" 
+                        value=' <%  if(editing){  %><%=product.path%>
+                                <%  }             %>'>
+            </div>
+
+            <%  if(editing){  %>
+                <input type='hidden' value='<%=product.path%>' name='path'>
+            <% } %>
+
+            <div class='form'>
+                <h3>Price</h3>
+                <input type="number" 
+                       name="price" 
+                       step='.01' 
+                       required
+                       value=<%  if(editing){ %><%=product.price%>
+                              <%  }             %>>
+            </div>
+
+            <div class='form'>
+                <h3>Description</h3>
+                <textarea name="description"
+                          rows='5'>
+                          <%  if(editing){  %><%=product.description%>
+                                 <%  } %></textarea>
+            </div>
+
+            <button type="submit">
+                <%    if (editing){   %>updateproduct
+                <%    }else{          %>Addproduct
+                <%    }               %>
+            </button>
+
+            <div>
+                <%  if(editing){  %>
+                    <input type='hidden' name='idd' value='<%=product._id%>'>
+                <%  }             %>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

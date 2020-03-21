@@ -1,0 +1,27 @@
+<%- include('../include/head.ejs') %>
+<link rel="stylesheet" href='/css/main.css'>
+</head>
+<%- include('../include/middle.ejs') %>
+    <main>
+        <form action='/resetactual' method="POST">
+            <% if(message) {  %>
+                <h2 class='flash'><%= message %></h2>
+            <% } %>
+            <div  class='form'>
+                <h3>originalPassword</h3>
+                <input type="password"  name="originalPassword" >
+            </div>
+
+            <div  class='form'>
+                <h3>newPassword</h3>
+                <input type="password"  name="newPassword" >
+            </div>
+          
+            <input type='hidden' name='email' value='<%= email %>'>
+            <input type='hidden' name='token' value='<%= token %>'>
+            <button type="submit">Reset</button>
+
+        </form>
+    </main>
+</body>
+</html>

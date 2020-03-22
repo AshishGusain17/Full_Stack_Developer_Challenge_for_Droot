@@ -226,21 +226,6 @@ const addtocart2=(req,res,next)=>{
 
 
 
-const invoice=(req,res,next)=>{
-    const invoiceName='Invoice-' + req.params.orderId + '.pdf';
-    invoicePath=path.join(__dirname,'../','data','Invoices',invoiceName);
-    console.log(34,invoicePath,78);
-    const doc = new PDFDocument();
-    doc.pipe(fs.createWriteStream('output.pdf'));
-    doc.pipe(res);
-    doc.text('hey hi hlo!');
-    doc.end();
-    
-    res.setHeader('Content-Type','application/pdf');
-    res.setHeader('Content-Disposition','attachment;filename="' + invoiceName + '"');
-    // res.send(data);
-
-}
  
 module.exports={
     getCheckout:getCheckout,
@@ -251,8 +236,7 @@ module.exports={
     getId:getId,
     addtocart:addtocart,
     addtocart2:addtocart2,
-    displayOrders:displayOrders,
-    invoice:invoice
+    displayOrders:displayOrders
 }     
 
 

@@ -14,12 +14,5 @@ router.get('/signup',cont_auth.getSignUp);
 
 router.post('/signup',cont_auth.postSignUp);
 
-// router.get('/reset',cont_auth.getResetPassword);
-
-// router.post('/reset',cont_auth.postResetPassword);
-
-// router.get('/resetactual/:token',cont_auth.getResetPasswordActually);
-
-// router.post('/resetactual',cont_auth.postResetPasswordActually);
 
 module.exports=router;

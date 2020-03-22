@@ -1,7 +1,7 @@
 # Full_Stack_Developer_Challenge_for_Droot
 
 ## My Work:
-* [Dev_Challenge_for_Droot.herokuapp.com](https://Dev_Challenge_for_Droot.herokuapp.com/)
+* [dev-challenge-for-droot.herokuapp.com](https://dev-challenge-for-droot.herokuapp.com/)
 
 ### Challenge:
 Make an Ecommerce website with any framework, plugins, templates, languages such as

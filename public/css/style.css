@@ -6,17 +6,12 @@
 
 html,
 body {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  margin: 0;
-  background-color: #7EC855;
   font-family: 'Roboto', sans-serif;
 }
 
 .shopping-cart {
   width: 750px;
-  height: 423px;
+  /* height: 423px; */
   margin: 80px auto;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -53,27 +48,7 @@ body {
   margin-right: 60px;
 }
 
-.delete-btn {
-  display: inline-block;
-  cursor: pointer;
-  width: 18px;
-  height: 17px;
-  background: url("delete-icn.svg") no-repeat center;
-  margin-right: 20px;
-}
 
-.like-btn {
-  position: absolute;
-  top: 9px;
-  left: 15px;
-  display: inline-block;
-  background: url('twitter-heart.png');
-  width: 60px;
-  height: 60px;
-  background-size: 2900%;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
 
 .is-active {
   animation-name: animate;
@@ -186,4 +161,10 @@ input:focus {
   .buttons {
     margin-right: 20px;
   }
+}
+
+
+.orders2{
+    display: flex;
+    flex-direction: column ;
 }

@@ -1,55 +1,66 @@
 <%- include('../include/head.ejs') %>
-<link rel="stylesheet" href='/css/main.css'>
+<link rel="stylesheet" href='/css/editp.css'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <%- include('../include/middle.ejs') %>
 <% if(message){ %>
-    <%= message %>
+    <h1 style="text-align: center;">
+        <%= message %>
+    </h1>
 <% } %>
-    <main>
+    <div class='form-style-5'>
+
+
         <form action="  <%  if(editing){  %>/editpage
                          <%  }else{        %>/addp
                          <%  }             %>" method="POST" enctype="multipart/form-data">
-
-            <div  class='form'>
-                <h3>Title</h3>
-                <input type="text"
-                       name="title"
-                       value=' <%  if(editing){  %><%=product.title%>
-                               <%  }             %>'>
-            </div>
  
-
+            <fieldset>
+                <legend><span class="number">1</span>Title</legend>
+                <input type="text" name="title" value=' <%  if(editing){  %><%=product.title%>
+                    <%  }             %>'>
+      
+            </fieldset>
         
 
-            <div  class='form'>
-                <h3>Image</h3>
-                <input type="file" 
-                        name="image" 
-                        value=' <%  if(editing){  %><%=product.path%>
-                                <%  }             %>'>
-            </div>
+            <fieldset>
+                <legend><span class="number">2</span>Image</legend>
+                <span class="btn btn-primary btn-file"  >
+                    <div class='w3-btn w3-brown'>
+                        Browse...
+                    </div>
+                    <input type="file" name="image" class='w3-btn w3-brown'
+                                        value=' <%  if(editing){  %>
+                                                    <%=product.path%>
+                                                 <%  }  %>'> 
+                </span>
+            </fieldset>
 
+            
             <%  if(editing){  %>
                 <input type='hidden' value='<%=product.path%>' name='path'>
             <% } %>
 
-            <div class='form'>
-                <h3>Price</h3>
-                <input type="number" 
-                       name="price" 
-                       step='.01' 
-                       required
-                       value=<%  if(editing){ %><%=product.price%>
-                              <%  }             %>>
-            </div>
 
-            <div class='form'>
-                <h3>Description</h3>
+            <fieldset>
+                <legend><span class="number">3</span>Price</legend>
+                <input type="number" name="price" step='.01'  required
+                        value=<%  if(editing){ %><%=product.price%>
+                            <%  }             %>>
+            </fieldset>
+
+            
+
+            <fieldset>
+                <legend><span class="number">4</span>Description</legend>
                 <textarea name="description"
-                          rows='5'>
-                          <%  if(editing){  %><%=product.description%>
-                                 <%  } %></textarea>
-            </div>
+                            rows='5'>
+                            <%  if(editing){  %><%=product.description%>
+                                <%  } %>
+                </textarea>
+            </fieldset>
+
+            
 
             <button type="submit">
                 <%    if (editing){   %>updateproduct
@@ -63,6 +74,6 @@
                 <%  }             %>
             </div>
         </form>
-    </main>
+    </div>
 </body>
 </html>

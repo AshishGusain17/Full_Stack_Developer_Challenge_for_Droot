@@ -8,7 +8,7 @@ router.get('/login',cont_auth.getLogin)
 
 router.post('/login',cont_auth.postLogin);
 
-router.post('/logout',cont_auth.getLogout);
+router.get('/logout',cont_auth.getLogout);
 
 router.get('/signup',cont_auth.getSignUp);
 

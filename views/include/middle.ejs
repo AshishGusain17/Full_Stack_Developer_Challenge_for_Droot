@@ -2,29 +2,20 @@
         <header class='hheader'>
             <nav class='nnav'>
                 <ul class='uul'>
-                    <li class='lli'><a href='/'>shop</a></li>
-                    <li class='lli'><a href='/products'>products</a></li>
+                    <li class='lli'><a href='/'>Shop</a></li>
+                    <li class='lli'><a href='/products'>Products</a></li>
                     <% if(isAuthenticated){ %>
-                        <li class='lli'><a href='/cart'>cart</a></li>
-                        <li class='lli'><a href='/displayOrders'>orders</a></li>
-                        <li class='lli'><a href='/addp'>add product</a></li>
-                        <li class='lli'><a href='/adminp'>admin product</a></li>
-                    <% } %>
-                </ul>
-                    <% if(!isAuthenticated){ %>
-                        <li class=''>
+                        <li class='lli'><a href='/cart'>Shopping-cart</a></li>
+                        <li class='lli'><a href='/displayOrders'>Orders</a></li>
+                        <li class='lli'><a href='/addp'>Add products</a></li>
+                        <li class='lli'><a href='/adminp'>Admin products</a></li>
+                        <a class="lli lle" href='/logout'>Logout</a>
+                    <% }else{ %>
+                        <li class='lli lle'>
                             <a href='/login'>Login</a>
                         </li>
-                        <li>
-                            <a href='/signup'>SignUp</a>
-                        </li>
-                    <% }else{ %>
-                        <form action='/logout' method='POST'>
-                            <button type='submit'>Logout</button>
-                        </form>
-                        <li>
-                            <a href='/signup'>SignUp</a>
-                        </li>
-                    <% } %> 
+                    <% } %>
+
+                    <li class='lli lld'><a href='/signup'>SignUp</a></li>
             </nav>
         </header>

@@ -2,11 +2,12 @@ body{
     padding:0;
     margin:0;
     font-family: sans-serif;
+    background-color: rgba(139, 137, 129, 0.877);
 }
 .hheader{
     width:100%;
-    height:3.5rem;
-    background-color:rgb(221, 198, 67);
+    height:4rem;
+    background-color:rgb(154, 231, 66);
     padding:0 1.5rem;
 }
 .nnav{
@@ -28,6 +29,18 @@ body{
     text-decoration: none;
     color:white;
 }
+
+.lld{
+    position:absolute;
+    right:0px;
+}
+.lle{
+    position:absolute;
+    right:77px;
+    color:white;
+}
+
+
 .edit{
     text-decoration: none;
     color:white;
@@ -45,10 +58,7 @@ body{
     float:left;
 }
 
-.orders1{
-    display:flex;
-    align-items: flex-start   
-}
+
 
 /* .main-header-item{
 

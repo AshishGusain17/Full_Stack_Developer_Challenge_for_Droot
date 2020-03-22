@@ -1,33 +1,29 @@
 <%- include('../include/head.ejs') %>
+<link rel="stylesheet" href='/css/product.css'>
 </head>
 <%- include('../include/middle.ejs') %>
     <%if( prods.length > 0){%>
-        <h1> myproducts</h1>
+        <h1 style="text-align:center">Products you added</h1>
         <% for(let pr of prods){%>
-            <div class='comp'>
+            <div class='card'>
+                <img src='<%=pr.path %>' alt="no-image" width=300px height=300px >
                 <h1><%=pr.title%></h1>
-                <div>
-                    <img src='<%=pr.path %>'  alt='no-image' >
-                </div>
-                <div>
-                    <h2><%=pr.price%></h2>
-                </div>
-                <div>
-                    <h2><%=pr.description%></h2>
-                </div>
-                <div>
-                    <a href='/edit/<%=pr._id%>?edit=true' class='edit'>Edit</a>
+                <p class="price">INR. <%=pr.price%></p>
+                <p><%=pr.description%></p>
+
+                <p>
+                    <a class='detail' href='/edit/<%=pr._id%>?edit=true' class='edit'>Edit</a>
                     <form method='POST' action='/delete'>
                         <button type='submit'>delete</button> 
                         <input type='hidden' name='idd' value='<%=pr._id%>'>
                         <input type='hidden' name='prr' value='<%=pr.price%>'>
                     </form>
-                </div>
+                </p>
             </div>
         <%}%>
                    
     <%}else{%>
-        <h1> NO products</h1>
+        <h1 style="text-align:center"> No products</h1>
     <%}%>
 </body>
 </html>

@@ -1,26 +1,33 @@
 <%- include('../include/head.ejs') %>
+<link rel="stylesheet" href='/css/product.css'>
+<link rel="stylesheet" href='/css/style.css'>
+
 </head>
+
 <%- include('../include/middle.ejs') %>
 <% if(orders.length >0 ) { %>
-    <h1>customer user name : <%=orders[0].user.name %></h1>
-    <% for(let pr of orders){ %>
-        <h2>order no.#  <%= pr._id%></h2>
-        
-        <div class='orders1'>
-            <% for(let item of pr.items){ %>
-            <div class ='orders'>
-                <p>Quantity:<%=item.qty%></p>
-                <p>Item:<%=item.productId.title%></p>
-                <p>Price:<%=item.productId.price%></p>
-                <img src='<%=item.productId.path%>' alt='noimageinorder'>
-                <a href='/invoice/<%= pr._id%>'>Invoice</a>
-            </div>
-        <% } %></div>
+    <h1>Customer name : <%=  name %></h1>
+    <div class='orders2'>
+        <% for(let pr of orders){ %>
+                <div>
+                    <h2 style="text-align:initial;">order no.#  <%= pr._id%></h2>
+                    <% for(let item of pr.items){ %>
+                        <div class ='card'>
+                            <img src='<%=item.productId.path%>' alt="no-image" width=300px height=300px >
+                            <h1>Item:<%=item.productId.title%></h1>
+                            <p class="price">Price : INR. <%=item.productId.price%></p>
+                            <p class="price">Quantity:<%=item.qty%></p> 
+                        </div>
+                    <% } %>
+                </div>
+    
+                <br>
+        <% } %>
+    </div>
 
-    <% } %>
 
 <% }else{ %>
-    <h1> no order yet</h1>
+    <h1 style="text-align:center"> No orders yet</h1>
 <% } %>
 </body>
 </html> 

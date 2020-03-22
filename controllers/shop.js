@@ -46,7 +46,7 @@ const getOrders=(req,res,next)=>{
                                         arr=ar.filter(pa=>{
                                             return (pa.user.id.toString()===req.getobj._id.toString())
                                         })
-                                        res.render('shop/orders',{tit:'ord',orders:arr,isAuthenticated:req.session.loggedIn}); 
+                                        res.render('shop/orders',{tit:'ord',orders:arr,name:req.getobj.accountName,isAuthenticated:req.session.loggedIn}); 
                                     })
                                     .catch(err=>{console.log(56,err,98);});
                             })
@@ -89,7 +89,7 @@ const displayOrders=(req,res,next)=>{
                 arr=ar.filter(pa=>{
                     return (pa.user.id.toString()===req.getobj._id.toString())
                 })
-                res.render('shop/orders',{tit:'ord',orders:arr,isAuthenticated:req.session.loggedIn}); 
+                res.render('shop/orders',{tit:'ord',orders:arr,name:req.getobj.accountName,isAuthenticated:req.session.loggedIn}); 
             })
             .catch(err=>{console.log(56,err,98);});
 }

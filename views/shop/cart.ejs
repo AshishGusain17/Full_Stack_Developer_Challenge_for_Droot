@@ -21,7 +21,6 @@
 
                 <div class="description">
                     <span><%=pr.productId.title%></span>
-                    <span>Bball High</span>
                     <span>White</span>
                 </div>
 
@@ -46,24 +45,6 @@
 
                 <div class="total-price">INR. <%=pr.productId.price%></div>
             </div>
-
-
-            <!-- 
-                <div class='cart'>
-                    <div><%=pr.productId.title%></div>
-                    <div><%=pr.productId.price%></div>
-                    <p>Quantity:<%=pr.qty%></p>
-                    <img src='<%=pr.productId.path%>' width=100px height=100px  alt='notloading'>
-                    <form method='POST' action='/deletefromcart'>
-                        <button type='submit'>deletefromcart</button> 
-                        <input type='hidden' name='idd' value='<%=pr.productId._id%>'>
-                        <input type='hidden' name='prr' value='<%=pr.productId.price%>'>
-                    </form>
-                    <form method='POST' action='/addtocart2'>
-                        <button type='submit'>add to cart</button>
-                        <input type='hidden' name='detailid' value='<%=pr.productId._id%>'>
-                    </form>
-                </div> -->
             
         <%}%>
         <a href='/orders' >

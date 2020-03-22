@@ -1,18 +1,54 @@
 <%- include('../include/head.ejs') %>
+<style>
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-color: rgb(235, 241, 232);
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+</style>
 </head>
 <%- include('../include/middle.ejs') %>
-<h1><%=obj.title%></h1>
 
-<div class='comp'>
-    <img src='\<%= obj.path %>' alt='notfindimage' >
+
+<div class='card'>
+    <img src='\<%= obj.path %>' alt="no-image" width=300px height=300px >
+    <h1><%=obj.title%></h1>
+    <p class="price">INR. <%=obj.price%></p>
+    <p><%=obj.description%></p>
+
+    <p>
+        <form method='POST' action='/addtocart2'>
+            <button type='submit'>add to cart</button> 
+            <input type='hidden' name='detailid' value='<%= obj._id%>'>
+        </form>
+    </p> 
 </div>
 
-<h1><%=obj.price%></h1>
-<p><%=obj.description%></p>
-<form method='POST' action='/addtocart2'>
-    <button type='submit'>add to cart</button>
-    <input type='hidden' name='detailid' value='<%= obj._id%>'>
-</form>
 
 </body>
 </html> 
